@@ -13,7 +13,7 @@ public class EchoController {
 	private final AtomicLong counter = new AtomicLong();
 
 	@GetMapping("/echo")
-	public Greeting greeting(@RequestParam(value = "message", defaultValue = "nothing to say") String name) {
+	public Greeting echoRequest(@RequestParam(value = "message", defaultValue = "nothing to say") String name) {
 		return new Greeting(counter.incrementAndGet(), String.format(template, name));
 	}
 }

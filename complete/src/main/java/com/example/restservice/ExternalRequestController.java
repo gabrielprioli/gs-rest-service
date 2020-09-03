@@ -26,7 +26,7 @@ public class ExternalRequestController {
         return "External requests were called.";
     }
 
-    private static void executeRequest(String uri) {
+    public static void executeRequest(String uri) {
         RestTemplate restTemplate = new RestTemplate();
         HttpEntity<String> request = new HttpEntity<>("");
         ResponseEntity<String> response = restTemplate.exchange(uri, HttpMethod.GET, request, String.class);
